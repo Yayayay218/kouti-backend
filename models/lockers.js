@@ -3,11 +3,12 @@ var mongoosePaginate = require('mongoose-paginate');
 var autoIncre = require('mongoose-sequence');
 
 var lockersSchema = new mongoose.Schema({
-    locker_id: String,
-    name: {
+    lockerID: String,
+    box: {
         type: String,
         required: true
     },
+    bid: String,
     status: {
         type: Number,
         default: 0
@@ -19,12 +20,12 @@ var lockersSchema = new mongoose.Schema({
         type: Number,
         default: 1
     },
-    serviceUUID: String,
-    charUUID: String,
     createAt: {
         type: Date,
         default: Date.now()
-    }
+    },
+    cuID: {type: Schema.Types.ObjectId, ref: 'Cus'},
+    orders: [{type: Schema.Types.ObjectId, ref: 'Orders'}]
 });
 
 lockersSchema.plugin(mongoosePaginate);

@@ -1,0 +1,74 @@
+cus:
+  post:
+    tags:
+      - cus
+    description:  Create a New Cu
+    produces:
+      - application/json
+    parameters:
+      - name: data
+        description:  Cu object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Cu'
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Cu'
+  get:
+    tags:
+      - cus
+    description: Get All Cu
+    parameters:
+      - name: id
+        in: query
+        description:  Cu id
+        type: string
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Cu'
+cuById:
+ put:
+    tags:
+      - cus
+    description: Edit Cu
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: Cu id
+        required: true
+        in: path
+        type: string
+      - name: data
+        description: Cu object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Cu'
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Cu'
+ delete:
+    tags:
+      - cus
+    description: Delete Cu
+    parameters:
+      - name: id
+        description: Cu id
+        required: true
+        in: path
+        type: string
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Cu'

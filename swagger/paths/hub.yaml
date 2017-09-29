@@ -1,0 +1,74 @@
+hubs:
+  post:
+    tags:
+      - hubs
+    description:  Create a New Hub
+    produces:
+      - application/json
+    parameters:
+      - name: data
+        description:  Hub object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Hub'
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Hub'
+  get:
+    tags:
+      - hubs
+    description: Get All Hub
+    parameters:
+      - name: id
+        in: query
+        description:  Hub id
+        type: string
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Hub'
+hubById:
+ put:
+    tags:
+      - hubs
+    description: Edit Hub
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: Hub id
+        required: true
+        in: path
+        type: string
+      - name: data
+        description: Hub object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Hub'
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Hub'
+ delete:
+    tags:
+      - hubs
+    description: Delete Hub
+    parameters:
+      - name: id
+        description: Hub id
+        required: true
+        in: path
+        type: string
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: '#/definitions/Hub'

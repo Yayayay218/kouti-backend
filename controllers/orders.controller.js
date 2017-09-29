@@ -29,11 +29,16 @@ module.exports.orderPOST = function (req, res) {
         .then(function (locker) {
             if (locker.available === constant.AVAILABLE) {
                 locker.available = 0;
-                locker.save();
                 order.save(function (err, order) {
                     if (err)
                         sendJSONResponse(res, 400, err);
-                    sendJSONResponse(res, 201, order);
+                    else {
+                        locker.orders.push(order._id);
+                        locker.save();
+                        setTimeout(function () {
+                            sendJSONResponse(res, 201, order);
+                        }, 500)
+                    }
                 });
                 return;
             }

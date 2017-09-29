@@ -1,16 +1,13 @@
 Locker:
   type: object
   required:
-    - name
+    - lockerID
     - pinCode
+    - box
   properties:
-    locker_id:
+    lockerID:
       type: string
-    name:
-      type: string
-    serviceUUID:
-      type: string
-    charUUID:
+    box:
       type: string
     pinCode:
       type: string
@@ -18,3 +15,5 @@ Locker:
       type: number
     available:
       type: number
+    cuID:
+      type: string

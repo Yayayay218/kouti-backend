@@ -2,3 +2,7 @@ Locker:
   $ref: ./Locker.yaml#/Locker
 Order:
   $ref: ./Order.yaml#/Order
+Hub:
+  $ref: ./Hub.yaml#/Hub
+Cu:
+  $ref: ./Cu.yaml#/Cu

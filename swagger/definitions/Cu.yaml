@@ -1,0 +1,10 @@
+Cu:
+  type: object
+  required:
+    - cuBoardAddress
+    - hubID
+  properties:
+    cuBoardAddress:
+      type: string
+    hubID:
+      type: string

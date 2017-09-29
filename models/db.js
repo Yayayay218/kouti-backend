@@ -45,3 +45,5 @@ process.on('SIGTERM', function () {
 // BRING IN YOUR SCHEMAS & MODELS
 require('./orders');
 require('./lockers');
+require('./hubs');
+require('./cu');

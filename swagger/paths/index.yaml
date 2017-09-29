@@ -6,3 +6,11 @@
   $ref: order.yaml#/orders
 /orders/{id}:
   $ref: order.yaml#/orderById
+/hubs:
+  $ref: hub.yaml#/hubs
+/hubs/{id}:
+  $ref: hub.yaml#/hubById
+/cus:
+  $ref: cu.yaml#/cus
+/cus/{id}:
+  $ref: cu.yaml#/cuById

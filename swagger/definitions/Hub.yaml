@@ -1,0 +1,14 @@
+Hub:
+  type: object
+  required:
+    - hubName
+    - password
+  properties:
+    hubName:
+      type: string
+    password:
+      type: string
+    serviceUUID:
+      type: string
+    charUUID:
+      type: string
