@@ -80,7 +80,7 @@ module.exports.lockerGetAll = function (req, res) {
         query,
         {
             sort: sort,
-            populate: 'cuID',
+            populate: 'orders',
             page: page,
             limit: limit
         }, function (err, locker) {

@@ -16,7 +16,7 @@ var ordersSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    locker: {type: Schema.Types.ObjectId, ref: 'Lockers', required: true}
+    lockerID: {type: Schema.Types.ObjectId, ref: 'Lockers', required: true}
 });
 
 ordersSchema.plugin(mongoosePaginate);

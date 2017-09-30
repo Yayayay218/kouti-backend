@@ -25,7 +25,7 @@ module.exports.orderPOST = function (req, res) {
     var data = req.body;
     var order = new Orders(data);
 
-    checkAndUpdateLockerAvailable(req.body.locker)
+    checkAndUpdateLockerAvailable(req.body.lockerID)
         .then(function (locker) {
             if (locker.available === constant.AVAILABLE) {
                 locker.available = 0;
@@ -72,7 +72,6 @@ module.exports.orderGetAll = function (req, res) {
         query,
         {
             sort: sort,
-            populate: 'locker',
             page: page,
             limit: limit
         }, function (err, order) {
@@ -98,7 +97,7 @@ module.exports.orderGetOne = function (req, res) {
             sendJSONResponse(res, 404, err);
         else
             sendJSONResponse(res, 200, {'data': order});
-    }).populate('locker');
+    })
 };
 
 //  PUT a Order
@@ -109,14 +108,13 @@ module.exports.orderPUT = function (req, res) {
         req.params.id,
         data,
         {'new': true})
-        .populate('locker')
         .exec(function (err, order) {
             if (err) {
                 sendJSONResponse(res, 400, err);
                 return;
             }
             if (order) {
-                checkAndUpdateLockerAvailable(order.locker)
+                checkAndUpdateLockerAvailable(order.lockerID)
                     .then(function (locker) {
                         locker.updateAt = Date.now();
                         locker.previousPinCode = locker.pinCode;

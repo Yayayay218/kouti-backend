@@ -6,7 +6,7 @@ Order:
   properties:
     note:
       type: string
-    locker:
+    lockerID:
       type: string
     status:
       type: number

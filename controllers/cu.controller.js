@@ -73,7 +73,7 @@ module.exports.cuGetAll = function (req, res) {
         query,
         {
             sort: sort,
-            populate: 'hubID',
+            populate: 'lockers',
             page: page,
             limit: limit
         }, function (err, cu) {
