@@ -139,3 +139,14 @@ module.exports.lockerPUT = function (req, res) {
             sendJSONresponse(res, 404, {'message': 'locker not founded'});
     });
 };
+
+// module.exports.changePincode = function (req, res) {
+//     Lockers.find(function (err, locker) {
+//         console.log(locker);
+//         locker.forEach(function (t, index) {
+//             locker[index].pinCode = "000" + t.bid;
+//             locker[index].save();
+//         });
+//         sendJSONresponse(res, 200, 'OK')
+//     })
+// };

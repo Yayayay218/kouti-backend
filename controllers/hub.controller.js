@@ -52,7 +52,10 @@ module.exports.hubGetAll = function (req, res) {
             populate: {
                 path: 'cu',
                 populate: {
-                    path: 'lockers'
+                    path: 'lockers',
+                    populate: {
+                        path: 'orders'
+                    }
                 }
             },
             page: page,

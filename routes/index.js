@@ -13,6 +13,7 @@ router.get('/lockers/:id', ctrlLocker.lockerGetOne);
 router.post('/lockers', ctrlLocker.lockerPOST);
 router.put('/lockers/:id', ctrlLocker.lockerPUT);
 router.delete('/lockers/:id', ctrlLocker.lockerDEL);
+// router.post('/changePincode', ctrlLocker.changePincode)
 
 //  Order APIs
 router.get('/orders', ctrlOrder.orderGetAll);
